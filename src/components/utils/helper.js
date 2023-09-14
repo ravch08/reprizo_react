@@ -1,7 +1,19 @@
+export { default as aboutCompany } from "../../assets/about-company.jpg";
 export { default as bannerImg } from "../../assets/banner-img.jpg";
 export { default as logoDark } from "../../assets/logo-dark.webp";
 export { default as logoLight } from "../../assets/logo-light.webp";
 export { default as sliderHover } from "../../assets/slider-hover.webp";
+
+export { default as blog1 } from "../../assets/blog-1.jpg";
+export { default as blog2 } from "../../assets/blog-2.jpg";
+export { default as blog3 } from "../../assets/blog-3.jpg";
+
+export { default as testimonial1 } from "../../assets/testimonial-1.png";
+export { default as testimonial2 } from "../../assets/testimonial-2.png";
+export { default as testimonial3 } from "../../assets/testimonial-3.png";
+export { default as testimonial4 } from "../../assets/testimonial-4.png";
+export { default as testimonial5 } from "../../assets/testimonial-5.png";
+export { default as testimonial6 } from "../../assets/testimonial-6.png";
 
 export { default as AboutPage } from "../pages/AboutPage.jsx";
 export { default as BlogPage } from "../pages/BlogPage.jsx";

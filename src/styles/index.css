@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-link {
-    @apply hover:text-primary px-2 py-8 text-xs;
+    @apply px-2 py-8 text-xs hover:text-primary;
   }
 
   .btn-light {
@@ -13,9 +13,5 @@
 
   .btn-dark {
     @apply inline-block border-[1px] border-gray-900 bg-transparent px-9 py-3 transition duration-300 ease-in-out hover:bg-gray-900 hover:text-white;
-  }
-
-  section {
-    padding: 8rem 0;
   }
 }

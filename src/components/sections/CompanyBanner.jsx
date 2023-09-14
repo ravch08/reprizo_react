@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 
 const CompanyBanner = () => {
   return (
-    <section className="container mx-auto h-1/2 ">
-      <div className="bg-companyBanner rounded-md">
-        <div className="w-1/2 px-24 py-32">
-          <h2 className="text-5xl text-white">The Lawson Collection</h2>
+    <section className="mx-auto h-1/2 md:container ">
+      <div className="rounded-md bg-companyBanner bg-center">
+        <div className="w-full px-8 py-16 md:px-24 md:py-32 lg:w-1/2">
+          <h2 className="font-serif text-5xl leading-normal text-white">
+            The Lawson Collection
+          </h2>
           <p className="py-8 text-sm text-gray-500">
             Whether you’re about to invest in your first serious watch or
             looking to add to an already impressive collection, the right luxury

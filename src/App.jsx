@@ -11,6 +11,8 @@ import {
   ProductsPage,
 } from "./components/utils/helper";
 
+import "./styles/app.css";
+
 function App() {
   return (
     <BrowserRouter>

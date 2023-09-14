@@ -11,7 +11,7 @@ const Banner = () => {
         className="absolute -right-1/2 left-1/2 -translate-x-1/2 animate-pulse"
       />
       <div className="ml-[15%] w-1/2">
-        <h1 className="font-serif text-6xl">
+        <h1 className="font-serif text-6xl leading-normal">
           Small Pleasures <br /> From Reprizo
         </h1>
         <p className="pb-6 pt-4">
