@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply hover:text-primary px-2 py-8 text-xs;
+  }
+
+  .btn-light {
+    @apply inline-block border-[1px] border-white bg-transparent px-9 py-3 text-white transition duration-300 ease-in-out hover:bg-white hover:text-black;
+  }
+
+  .btn-dark {
+    @apply inline-block border-[1px] border-gray-900 bg-transparent px-9 py-3 transition duration-300 ease-in-out hover:bg-gray-900 hover:text-white;
+  }
+
+  section {
+    padding: 8rem 0;
+  }
+}
