@@ -75,3 +75,15 @@ export const blogItems = [
     title: "Best Watches from Top Watchmakers",
   },
 ];
+
+export const productItems = [
+  {
+    id: "p1",
+    img: "",
+    rating: 3,
+    discount: 4,
+    price: 430.0,
+    priceCrossed: "",
+    title: "Fastrack Analog Golden Dial Men’s Watch",
+  },
+];

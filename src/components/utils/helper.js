@@ -15,6 +15,27 @@ export { default as testimonial4 } from "../../assets/testimonial-4.png";
 export { default as testimonial5 } from "../../assets/testimonial-5.png";
 export { default as testimonial6 } from "../../assets/testimonial-6.png";
 
+export { default as product1 } from "../../assets/product-1.jpg";
+export { default as product10 } from "../../assets/product-10.jpg";
+export { default as product11 } from "../../assets/product-11.jpg";
+export { default as product12 } from "../../assets/product-12.jpg";
+export { default as product13 } from "../../assets/product-13.jpg";
+export { default as product14 } from "../../assets/product-14.jpg";
+export { default as product15 } from "../../assets/product-15.jpg";
+export { default as product16 } from "../../assets/product-16.jpg";
+export { default as product17 } from "../../assets/product-17.jpg";
+export { default as product18 } from "../../assets/product-18.jpg";
+export { default as product19 } from "../../assets/product-19.jpg";
+export { default as product2 } from "../../assets/product-2.jpg";
+export { default as product20 } from "../../assets/product-20.jpg";
+export { default as product3 } from "../../assets/product-3.jpg";
+export { default as product4 } from "../../assets/product-4.jpg";
+export { default as product5 } from "../../assets/product-5.jpg";
+export { default as product6 } from "../../assets/product-6.jpg";
+export { default as product7 } from "../../assets/product-7.jpg";
+export { default as product8 } from "../../assets/product-8.jpg";
+export { default as product9 } from "../../assets/product-9.jpg";
+
 export { default as AboutPage } from "../pages/AboutPage.jsx";
 export { default as BlogPage } from "../pages/BlogPage.jsx";
 export { default as Cart } from "../pages/Cart.jsx";
