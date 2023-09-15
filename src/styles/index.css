@@ -26,4 +26,12 @@
   .stick {
     @apply fixed left-0 top-0 z-50 w-full bg-white py-2 shadow-lg transition-[padding] duration-500 ease-in-out;
   }
+
+  .btn-page {
+    @apply h-10 w-12 rounded-full bg-slate-500 text-white transition-colors duration-500 ease-in-out hover:bg-primary;
+  }
+
+  .actived {
+    @apply bg-primary;
+  }
 }

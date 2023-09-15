@@ -1,9 +1,34 @@
+import { useState } from "react";
 import ProductItem from "../layout/ProductItem";
 import { productItems } from "../utils/data";
 
 const Bestsellers = () => {
+  const [curPage, setCurPage] = useState(1);
+  const [prodPerPage, setProdPerPage] = useState(4);
+
+  const numOfPages = productItems.length / prodPerPage;
+  const indexOfLastProduct = curPage * prodPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - prodPerPage;
+
+  let activeProducts = productItems.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct,
+  );
+
+  const pagesArray = [...Array(numOfPages + 1).keys()].slice(1);
+
+  function handleBtnPrev() {
+    if (curPage <= 1) setCurPage(numOfPages);
+    else setCurPage((prev) => prev - 1);
+  }
+
+  function handleBtnNext() {
+    if (curPage >= numOfPages) setCurPage(1);
+    else setCurPage((prev) => prev + 1);
+  }
+
   return (
-    <section className="mt-24 bg-zinc-50">
+    <section className="mt-24 bg-zinc-100">
       <div className="container">
         <div className="mx-auto w-3/5 text-center">
           <h2 className="font-serif text-5xl leading-normal">
@@ -16,8 +41,8 @@ const Bestsellers = () => {
           </p>
         </div>
 
-        <div className="flex flex-row flex-wrap justify-evenly space-x-8">
-          {productItems?.map((productItem) => (
+        <div className="grid grid-cols-4 gap-8">
+          {activeProducts?.map((productItem) => (
             <ProductItem
               key={productItem.id}
               img={productItem.img}
@@ -28,6 +53,24 @@ const Bestsellers = () => {
               priceCrossed={productItem.priceCrossed}
             />
           ))}
+        </div>
+
+        <div className="mt-16 flex flex-row items-center justify-center gap-4">
+          <button className="btn-page" onClick={handleBtnPrev}>
+            Prev
+          </button>
+          {pagesArray.map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurPage(page)}
+              className={curPage === page ? "actived btn-page" : "btn-page"}
+            >
+              {page}
+            </button>
+          ))}
+          <button className="btn-page" onClick={handleBtnNext}>
+            Next
+          </button>
         </div>
       </div>
     </section>
