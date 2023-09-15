@@ -8,7 +8,7 @@ import { clientItems } from "../utils/data";
 const Clients = () => {
   return (
     <article>
-      <div className="container">
+      <div className="container mb-8">
         <Swiper
           loop={true}
           speed={1500}
