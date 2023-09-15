@@ -62,7 +62,9 @@ export { default as Header } from "../sections/Header.jsx";
 export { default as Testimonials } from "../sections/Testimonials.jsx";
 
 export { default as HamburgerMenu } from "../layout/HamburgerMenu.jsx";
+export { default as HeaderNav } from "../layout/HeaderNav.jsx";
 export { default as Navbar } from "../layout/Navbar.jsx";
 export { default as ProductItem } from "../layout/ProductItem.jsx";
+export { default as Rating } from "../layout/Rating.jsx";
 export { default as ScrollTop } from "../layout/ScrollTop.jsx";
 export { default as User } from "../layout/User.jsx";

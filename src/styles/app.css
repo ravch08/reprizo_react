@@ -14,8 +14,3 @@ section {
   height: 10rem;
   background-color: white;
 }
-
-.show {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
