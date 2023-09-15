@@ -8,6 +8,13 @@ export { default as blog1 } from "../../assets/blog-1.jpg";
 export { default as blog2 } from "../../assets/blog-2.jpg";
 export { default as blog3 } from "../../assets/blog-3.jpg";
 
+export { default as client1 } from "../../assets/partner-logo-1.jpg";
+export { default as client2 } from "../../assets/partner-logo-2.jpg";
+export { default as client3 } from "../../assets/partner-logo-3.jpg";
+export { default as client4 } from "../../assets/partner-logo-4.jpg";
+export { default as client5 } from "../../assets/partner-logo-5.jpg";
+export { default as client6 } from "../../assets/partner-logo-6.jpg";
+
 export { default as testimonial1 } from "../../assets/testimonial-1.png";
 export { default as testimonial2 } from "../../assets/testimonial-2.png";
 export { default as testimonial3 } from "../../assets/testimonial-3.png";

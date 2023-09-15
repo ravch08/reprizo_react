@@ -2,6 +2,12 @@ import {
   blog1,
   blog2,
   blog3,
+  client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
   testimonial1,
   testimonial2,
   testimonial3,
@@ -73,6 +79,45 @@ export const blogItems = [
     img: blog3,
     date: "26 Jun, 2022",
     title: "Best Watches from Top Watchmakers",
+  },
+];
+
+export const clientItems = [
+  {
+    id: "c1",
+    img: client1,
+  },
+  {
+    id: "c2",
+    img: client2,
+  },
+  {
+    id: "c3",
+    img: client3,
+  },
+  {
+    id: "c4",
+    img: client4,
+  },
+  {
+    id: "c5",
+    img: client5,
+  },
+  {
+    id: "c6",
+    img: client6,
+  },
+  {
+    id: "c7",
+    img: client2,
+  },
+  {
+    id: "c8",
+    img: client4,
+  },
+  {
+    id: "c9",
+    img: client3,
   },
 ];
 
