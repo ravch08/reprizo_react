@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        companyBanner: "url('./src/assets/banner-company.png')",
+        companyBanner: "url('./src/assets/banner-company.webp')",
       },
       colors: {
         primary: "#af7f66",

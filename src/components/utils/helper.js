@@ -1,4 +1,5 @@
 export { default as aboutCompany } from "../../assets/about-company.jpg";
+export { default as companyBanner } from "../../assets/banner-company.webp";
 export { default as bannerImg } from "../../assets/banner-img.jpg";
 export { default as logoDark } from "../../assets/logo-dark.webp";
 export { default as logoLight } from "../../assets/logo-light.webp";
@@ -68,3 +69,4 @@ export { default as ProductItem } from "../layout/ProductItem.jsx";
 export { default as Rating } from "../layout/Rating.jsx";
 export { default as ScrollTop } from "../layout/ScrollTop.jsx";
 export { default as User } from "../layout/User.jsx";
+

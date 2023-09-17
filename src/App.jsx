@@ -8,7 +8,7 @@ import {
   Header,
   Home,
   Page404,
-  ProductsPage,
+  ProductsPage
 } from "./components/utils/helper";
 
 import "./styles/app.css";
