@@ -1,7 +1,18 @@
-import BlogItem from "../layout/BlogItem";
-import { blogItems } from "../utils/data";
+import { useQuery } from "@tanstack/react-query";
+import { getBlogs } from "../../services/apiblogs";
+import { BlogItem, Loading } from "../utils/helper";
 
 const Blog = () => {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getBlogs,
+  });
+
+  if (error) {
+    console.error(error);
+    throw new Error("Blog Items could not be Loaded!");
+  }
+
   return (
     <section>
       <div className="container">
@@ -15,14 +26,18 @@ const Blog = () => {
         </div>
 
         <div className="flex flex-col items-center justify-between lg:flex-row">
-          {blogItems?.map((blogItem) => (
-            <BlogItem
-              key={blogItem.id}
-              img={blogItem.img}
-              date={blogItem.date}
-              title={blogItem.title}
-            />
-          ))}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            data?.map((blogItem) => (
+              <BlogItem
+                key={blogItem.id}
+                img={blogItem.img}
+                date={blogItem.date}
+                title={blogItem.title}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>

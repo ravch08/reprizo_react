@@ -3,9 +3,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-import { clientItems } from "../utils/data";
+import { useQuery } from "@tanstack/react-query";
+import { getClients } from "../../services/apiClients";
+import Loading from "../layout/Loading";
 
 const Clients = () => {
+  const { isLoading, data, error } = useQuery({
+    queryKey: ["clients"],
+    queryFn: getClients,
+  });
+
+  if (error) {
+    console.error(error);
+    throw new Error("Could not load clients!");
+  }
+
   return (
     <article>
       <div className="container mb-8">
@@ -35,11 +47,15 @@ const Clients = () => {
             },
           }}
         >
-          {clientItems?.map((item) => (
-            <SwiperSlide key={item.id}>
-              <img src={item.img} alt={item.id} />
-            </SwiperSlide>
-          ))}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            data?.map((item) => (
+              <SwiperSlide key={item.id}>
+                <img src={item.img} alt={item.id} />
+              </SwiperSlide>
+            ))
+          )}
         </Swiper>
       </div>
     </article>

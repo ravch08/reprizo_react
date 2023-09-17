@@ -52,8 +52,7 @@ ProductItem.propTypes = {
   price: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   discount: PropTypes.number.isRequired,
-  priceCrossed: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  priceCrossed: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default ProductItem;

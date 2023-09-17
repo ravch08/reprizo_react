@@ -1,13 +1,25 @@
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { testimonialItems } from "../utils/data";
-
 import "swiper/css";
 import "swiper/css/navigation";
-import TestimonialItem from "../layout/TestimonialItem";
+
+import { useQuery } from "@tanstack/react-query";
+import { getTestimonials } from "../../services/apiTestimonials";
+
+import { Loading, TestimonialItem } from "../utils/helper";
 
 const Testimonials = () => {
+  const { isLoading, data, error } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: getTestimonials,
+  });
+
+  if (error) {
+    console.error(error);
+    throw new Error("Could not load Testimonials");
+  }
+
   return (
     <section>
       <div className="container text-center">
@@ -33,15 +45,19 @@ const Testimonials = () => {
           centeredSlides={true}
           modules={[Navigation]}
         >
-          {testimonialItems?.map((testimonialItem) => (
-            <SwiperSlide key={testimonialItem.id}>
-              <TestimonialItem
-                img={testimonialItem.img}
-                name={testimonialItem.name}
-                quote={testimonialItem.quote}
-              />
-            </SwiperSlide>
-          ))}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            data?.map((testimonialItem) => (
+              <SwiperSlide key={testimonialItem.id}>
+                <TestimonialItem
+                  img={testimonialItem.img}
+                  name={testimonialItem.name}
+                  quote={testimonialItem.quote}
+                />
+              </SwiperSlide>
+            ))
+          )}
         </Swiper>
       </div>
     </section>

@@ -1,19 +1,32 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import ProductItem from "../layout/ProductItem";
-import { productItems } from "../utils/data";
+
+import { getProducts } from "../../services/apiProducts";
+import { Loading, ProductItem } from "../utils/helper";
 
 const Bestsellers = () => {
   const [curPage, setCurPage] = useState(1);
   const [prodPerPage, setProdPerPage] = useState(4);
 
-  const numOfPages = productItems.length / prodPerPage;
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  if (isLoading) return;
+
+  if (error) {
+    console.error(error);
+    throw new Error("Could not load Products!");
+  }
+
+  console.log(data);
+
+  const numOfPages = data.length / prodPerPage;
   const indexOfLastProduct = curPage * prodPerPage;
   const indexOfFirstProduct = indexOfLastProduct - prodPerPage;
 
-  let activeProducts = productItems.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct,
-  );
+  let activeProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
 
   const pagesArray = [...Array(numOfPages + 1).keys()].slice(1);
 
@@ -42,17 +55,21 @@ const Bestsellers = () => {
         </div>
 
         <div className="grid grid-cols-4 gap-8">
-          {activeProducts?.map((productItem) => (
-            <ProductItem
-              key={productItem.id}
-              img={productItem.img}
-              title={productItem.title}
-              price={productItem.price}
-              rating={productItem.rating}
-              discount={productItem.discount}
-              priceCrossed={productItem.priceCrossed}
-            />
-          ))}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            activeProducts?.map((productItem) => (
+              <ProductItem
+                key={productItem.id}
+                img={productItem.img}
+                title={productItem.title}
+                price={productItem.price}
+                rating={productItem.rating}
+                discount={productItem.discount}
+                priceCrossed={productItem.priceCrossed}
+              />
+            ))
+          )}
         </div>
 
         <div className="mt-16 flex flex-row items-center justify-center gap-4">
