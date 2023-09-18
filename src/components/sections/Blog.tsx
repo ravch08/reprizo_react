@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getBlogs } from "../../services/apiblogs";
 import { BlogItem, Loading } from "../utils/helper";
 
+import { BlogProps } from "../../types/types";
+
 const Blog = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["blogs"],
@@ -29,7 +31,7 @@ const Blog = () => {
           {isLoading ? (
             <Loading />
           ) : (
-            data?.map((blogItem) => (
+            data?.map((blogItem: BlogProps) => (
               <BlogItem
                 key={blogItem.id}
                 img={blogItem.img}

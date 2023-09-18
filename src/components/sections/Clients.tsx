@@ -5,6 +5,7 @@ import "swiper/css";
 
 import { useQuery } from "@tanstack/react-query";
 import { getClients } from "../../services/apiClients";
+import { ClientProps } from "../../types/types";
 import Loading from "../layout/Loading";
 
 const Clients = () => {
@@ -50,9 +51,9 @@ const Clients = () => {
           {isLoading ? (
             <Loading />
           ) : (
-            data?.map((item) => (
+            data?.map((item: ClientProps) => (
               <SwiperSlide key={item.id}>
-                <img src={item.img} alt={item.id} />
+                <img src={item.img} alt="client" />
               </SwiperSlide>
             ))
           )}

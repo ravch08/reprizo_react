@@ -1,9 +1,12 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const Rating = ({ rating }) => {
-  const reviewArr = [];
+interface RatingProps {
+  rating: number;
+}
+
+const Rating: React.FC<RatingProps> = ({ rating }) => {
+  const reviewArr: React.JSX.Element[] = [];
 
   const star = (
     <svg xmlns="http://www.w3.org/2000/svg" width="15" viewBox="0 0 24 24">
@@ -21,7 +24,7 @@ const Rating = ({ rating }) => {
     </svg>
   );
 
-  const reviews = (num) => {
+  const reviews = (num: number) => {
     for (let i = 0; i < num; i++) reviewArr[i] = star;
     for (let i = num; i < 5; i++) reviewArr[i] = starOutline;
     return reviewArr;
@@ -34,10 +37,6 @@ const Rating = ({ rating }) => {
       {reviewArr.map((item) => React.cloneElement(item, { key: uuidv4() }))}
     </div>
   );
-};
-
-Rating.propTypes = {
-  rating: PropTypes.number.isRequired,
 };
 
 export default Rating;

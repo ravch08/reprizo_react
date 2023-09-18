@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { BlogProps } from "../../types/types";
 
-const BlogItem = ({ date, title, img }) => {
+const BlogItem = ({ date, title, img }: BlogProps) => {
   return (
     <Link to="#!" className="relative overflow-hidden rounded-lg">
       <img
@@ -30,12 +30,6 @@ const BlogItem = ({ date, title, img }) => {
       </div>
     </Link>
   );
-};
-
-BlogItem.propTypes = {
-  img: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default BlogItem;

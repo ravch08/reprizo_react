@@ -6,10 +6,13 @@ const Navbar = () => {
       <NavLink to="/" className="nav-link">
         HOME
       </NavLink>
-      <NavLink to="" className="nav-link">
+      <NavLink to="about" className="nav-link">
         ABOUT
       </NavLink>
-      <NavLink to="" className="nav-link flex flex-row items-center gap-1">
+      <NavLink
+        to="products"
+        className="nav-link flex flex-row items-center gap-1"
+      >
         PRODUCTS
         <svg
           width="6"
@@ -21,13 +24,13 @@ const Navbar = () => {
         </svg>
       </NavLink>
 
-      <NavLink to="" className="nav-link">
+      <NavLink to="blogs" className="nav-link">
         BLOG
       </NavLink>
-      <NavLink to="" className="nav-link">
+      <NavLink to="contact" className="nav-link">
         CONTACT
       </NavLink>
-      <NavLink to="" className="nav-link">
+      <NavLink to="#!" className="nav-link">
         INSTANT QUOTE
       </NavLink>
     </nav>

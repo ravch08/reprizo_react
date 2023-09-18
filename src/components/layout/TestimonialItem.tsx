@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
+import { TestimonialProps } from "../../types/types";
 
-const TestimonialItem = ({ name, img, quote }) => {
+const TestimonialItem = ({ name, img, quote }: TestimonialProps) => {
   return (
     <div className="rounded-lg bg-zinc-50 px-32 py-28 text-center">
       <p className="mb-12 text-xl leading-8 text-gray-400">
@@ -12,12 +12,6 @@ const TestimonialItem = ({ name, img, quote }) => {
       </small>
     </div>
   );
-};
-
-TestimonialItem.propTypes = {
-  quote: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
 };
 
 export default TestimonialItem;

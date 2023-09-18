@@ -1,8 +1,15 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { ProductProps } from "../../types/types";
 import { Rating } from "../utils/helper";
 
-const ProductItem = ({ title, img, price, priceCrossed, discount, rating }) => {
+const ProductItem = ({
+  title,
+  img,
+  price,
+  priceCrossed,
+  discount,
+  rating,
+}: ProductProps) => {
   return (
     <Link
       to="#!"
@@ -44,15 +51,6 @@ const ProductItem = ({ title, img, price, priceCrossed, discount, rating }) => {
       </div>
     </Link>
   );
-};
-
-ProductItem.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  discount: PropTypes.number.isRequired,
-  priceCrossed: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default ProductItem;
