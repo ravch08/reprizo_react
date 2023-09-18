@@ -4,29 +4,30 @@ import { useState } from "react";
 import { getProducts } from "../../services/apiProducts";
 import { Loading, ProductItem } from "../utils/helper";
 
+import { ProductProps } from "../../types/types";
+
 const Bestsellers = () => {
   const [curPage, setCurPage] = useState(1);
-  const [prodPerPage, setProdPerPage] = useState(4);
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
 
-  if (isLoading) return;
-
   if (error) {
     console.error(error);
     throw new Error("Could not load Products!");
   }
 
-  console.log(data);
+  if (isLoading) return;
 
-  const numOfPages = data.length / prodPerPage;
+  const prodPerPage = 4;
+  const numOfPages = (data?.length ?? 0) / prodPerPage;
+
   const indexOfLastProduct = curPage * prodPerPage;
   const indexOfFirstProduct = indexOfLastProduct - prodPerPage;
 
-  let activeProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
+  let activeProducts = data?.slice(indexOfFirstProduct, indexOfLastProduct);
 
   const pagesArray = [...Array(numOfPages + 1).keys()].slice(1);
 
@@ -58,7 +59,7 @@ const Bestsellers = () => {
           {isLoading ? (
             <Loading />
           ) : (
-            activeProducts?.map((productItem) => (
+            activeProducts?.map((productItem: ProductProps) => (
               <ProductItem
                 key={productItem.id}
                 img={productItem.img}

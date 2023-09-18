@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getTestimonials } from "../../services/apiTestimonials";
 
+import { TestimonialProps } from "../../types/types";
 import { Loading, TestimonialItem } from "../utils/helper";
 
 const Testimonials = () => {
@@ -37,7 +38,6 @@ const Testimonials = () => {
         <Swiper
           loop={true}
           speed={1500}
-          effect={"fade"}
           spaceBetween={30}
           slidesPerView={1}
           grabCursor={true}
@@ -48,7 +48,7 @@ const Testimonials = () => {
           {isLoading ? (
             <Loading />
           ) : (
-            data?.map((testimonialItem) => (
+            data?.map((testimonialItem: TestimonialProps) => (
               <SwiperSlide key={testimonialItem.id}>
                 <TestimonialItem
                   img={testimonialItem.img}
