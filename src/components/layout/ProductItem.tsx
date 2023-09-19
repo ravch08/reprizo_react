@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ProductProps } from "../../types/types";
 import { Rating } from "../utils/helper";
+
+import { ProductProps } from "../../types/types";
 
 const ProductItem = ({
   title,

@@ -1,11 +1,9 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-interface RatingProps {
-  rating: number;
-}
+import { RatingProps } from "../../types/types";
 
-const Rating: React.FC<RatingProps> = ({ rating }) => {
+const Rating = ({ rating }: RatingProps) => {
   const reviewArr: React.JSX.Element[] = [];
 
   const star = (

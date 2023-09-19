@@ -7,7 +7,7 @@ import { Loading, ProductItem } from "../utils/helper";
 import { ProductProps } from "../../types/types";
 
 const Bestsellers = () => {
-  const [curPage, setCurPage] = useState(1);
+  let [curPage, setCurPage] = useState(1);
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["products"],
@@ -19,7 +19,7 @@ const Bestsellers = () => {
     throw new Error("Could not load Products!");
   }
 
-  if (isLoading) return;
+  if (isLoading) return null;
 
   const prodPerPage = 4;
   const numOfPages = (data?.length ?? 0) / prodPerPage;
@@ -29,7 +29,7 @@ const Bestsellers = () => {
 
   let activeProducts = data?.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  const pagesArray = [...Array(numOfPages + 1).keys()].slice(1);
+  const pagesArray: number[] = [...Array(numOfPages + 1).keys()].slice(1);
 
   function handleBtnPrev() {
     if (curPage <= 1) setCurPage(numOfPages);

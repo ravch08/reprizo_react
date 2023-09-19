@@ -26,3 +26,7 @@ export type ClientProps = {
   id?: number;
   img: string;
 };
+
+export type RatingProps = {
+  rating: number;
+};
